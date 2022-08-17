@@ -9,14 +9,19 @@ button.addEventListener("click", function () {
   const words = valueInput.split(" ");
   //console.log(words); // ['asd', 'asd', 'asd']
 
-  let words2 = words
-    .map((word) => {
-      return word[0].toUpperCase() + word.substring(1);
-      //console.log(words);
-    })
-    .join(" ");
-  newarray.push(words2);
-  console.log(newarray);
+  if (words[words.length - 1] !== "") {
+    let words2 = words
+      .map((word) => {
+        return word[0].toUpperCase() + word.substring(1);
+        //console.log(words);
+      })
+      .join(" ");
+    newarray.push(words2);
+    console.log(newarray);
+  } else {
+    alert("No colocar espacios ni al comienzo ni al final");
+  }
+  input.value = "";
 });
 /*
 // Primer letra de array de nombres a mayuscula
